@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width" />
-    <link rel="stylesheet" href="estilos/estilos.css" type="text/css" />
-     <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
-    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-    <link rel="stylesheet" href="estilos/estilos.css" type="text/css" />
-    <title>Ejemplo HTML5 y CSS3</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Problema dos</title>
+  <link rel="stylesheet" href="estilos/estilos.css" type="text/css" />
+  <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.1/themes/base/jquery-ui.css">
+  <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+  <script src="https://code.jquery.com/ui/1.13.1/jquery-ui.js"></script>
   </head>
 <body>
     <div class="columns">
@@ -18,14 +18,10 @@
                 <p> Apellido: </p>
                 <input id ="apellido" type="text" name="" placeholder="apellido">
                 <p> Fecha de Nacimiento </p>
-                    <script>
-                        $( function() {
-                        $( "#datepicker" ).datepicker();
-                        } );
-                   </script>
-                   <input id ="fecha" type="text" id="datepicker">
-                   <br><br>
-                   <button type="submit">Generar Mensaje</button>
+                <input type="text" id="datepicker">
+                <br>
+                <br>
+                <button type="submit">Generar Mensaje</button>
             </div>
         </div>
         <div class="column dos">
@@ -35,19 +31,18 @@
 </body>
 <script>
     $(document).ready(function() {
+      $( "#datepicker" ).datepicker();
       $( "button" ).click(function() {
         var texto1 = $('#nombre').val();
         var texto2 = $('#apellido').val();
-        var texto3 = $('#fecha').val();
-
-        $('#mensajeFinal').append("<p>Datos Ingresados: "+ "<br>"
-            + texto1+ "<br>"
-            + texto2+ "<br>"
-            + texto3+ "</p>");
+        var texto3 = $('#datepicker').val();
+        $('#mensajeFinal').append("<p>Datos Ingresados: "+ "<br>" 
+          + texto1+ "<br>"
+          + texto2+ "<br>"
+          + texto3+ "</p>");
         console.log(texto1);
         console.log(texto2);
         console.log(texto3);
-
       });
     });
   </script>
